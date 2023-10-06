@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fil d'actualité | Paris Explorer</title>
+    
+    <link rel="stylesheet" href="actu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <a href="../index .html"> <span>Paris</span> Explorer</a>
+        </div>
+        <ul class="menu">
+            <ul class="menuderoulant">
+                <button class="dropbtn">Art et Culture
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="sousmenu">
+                    <a href="">Art comtemporain</a>
+                    <a href="">BD</a>
+                    <a href="">Cinéma</a>
+                    <a href="">Cirque</a>
+                    <a href="">Expo</a>
+                    <a href="">Histoire</a>
+                    <a href="">Humour</a>
+                    <a href="">Littérature</a>
+                    <a href="">Musique</a>
+                    <a href="">Peinture</a>
+                    <a href="">Photo</a>
+                    <a href="">Spectacle musical</a>
+                    <a href="">Théatre</a>
+                </div>
+            </ul>
+            <ul class="menuderoulant2">            
+                <button class="dropbtn2">Divertissement et Loisirs
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="sousmenu2">
+                    <a href="">Balade</a>
+                    <a href="">Brocante</a>
+                    <a href="">Clubbing</a>
+                    <a href="">Jeux 2024</a>
+                    <a href="">Loisirs</a>
+                    <a href="">Spectacle musical</a>
+                    <a href="">Street-art</a>
+                </div>
+            </ul>
+            <ul class="menuderoulant3">        
+                <button class="dropbtn3">Education et Connaissance
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="sousmenu3">
+                    <a href="">Atelier</a>
+                    <a href="">Conférence</a>
+                    <a href="">Clubbing</a>
+                    <a href="">Cirque</a>
+                </div>
+            </ul>
+            <ul class="menuderoulant4">    
+                <button class="dropbtn4">Divertissement et Loisirs
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="sousmenu4">
+                    <a href="">Enfant</a>
+                    <a href="">Gourmand</a>
+                    <a href="">LGBT</a>
+                    <a href="">Nature</a>
+                    <a href="">Santé</a>
+                    <a href="">Solidarité</a>
+                    <a href="">Sport</a>
+                </div>
+            </ul>
+            </ul>
+            <a href="../p_connexion/Connexion.html" class="btn-reservation">Se connecter</a>
+
+        <div class="responsive-menu"></div>
+    </header>
+
+
+    <div style="width: 1300px; margin: auto; ">
+            <div class="actu">
+                <div class="titre">
+                <H1>Actualité</H1>
+                <br>
+                <h2> Découvrez les tendances du moments, connectez-vous pour avoir un fil d'actualité en fonction de votre profil ! </h2>
+                <br>
+                <br>
+                <br>
+                <hr>
+            </div>
+        </div>        
+        <div id="destination-container" >            
+        <script>
+document.addEventListener("DOMContentLoaded", function () {
+    var destinationContainer = document.getElementById("destination-container");
+    var currentDate = new Date(); // Obtenez la date actuelle
+
+    // Chemin vers le fichier JSON
+    var jsonUrl = "../evenements.json"; // Assurez-vous que le chemin soit correct
+
+    // Chargement du fichier JSON
+    fetch(jsonUrl)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            // Filtrer les événements en fonction de la date actuelle
+            var filteredEvents = data.filter(function (destination) {
+                var eventDate = new Date(destination.date_start);
+                return eventDate >= currentDate;
+            });
+
+            // Parcours des données filtrées et création des éléments HTML
+            filteredEvents.forEach(function (destination) {
+                var container = document.createElement("div");
+                container.classList.add("container");
+
+                var imageDiv = document.createElement("div");
+                imageDiv.classList.add("image");
+
+                var image = document.createElement("img");
+                image.src = destination.cover_url;
+                image.alt = destination.cover_alt; 
+
+                var textDiv = document.createElement("div");
+                textDiv.classList.add("text");
+
+                var title = document.createElement("a");
+                title.href = destination.url; // Lien vers l'événement complet
+                title.textContent = destination.title;
+
+                var leadText = document.createElement("p");
+                leadText.textContent = destination.lead_text;
+
+                var price = document.createElement("i");
+                price.classList.add("fas", "fa-dollar-sign");
+                price.textContent = " " + destination.price_detail; // Utilisez le prix à partir du JSON
+
+                // Création de l'icône d'horloge
+                var clockIcon = document.createElement("i");
+                clockIcon.classList.add("far", "fa-clock"); // Utilisation de l'icône d'horloge far fa-clock
+                clockIcon.textContent = " " + destination.date_description; // Affichage de la date_description
+
+                var button = document.createElement("button");
+                button.textContent = "En savoir plus"; // Vous pouvez personnaliser ce texte
+
+                textDiv.appendChild(title);
+                textDiv.appendChild(leadText);
+                textDiv.appendChild(price);
+                textDiv.appendChild(document.createElement("br"));
+
+                // Ajout de l'icône d'horloge à la div textDiv
+                textDiv.appendChild(clockIcon);
+
+                textDiv.appendChild(document.createElement("br"));
+                textDiv.appendChild(button);
+
+                container.appendChild(imageDiv);
+                container.appendChild(textDiv);
+
+                destinationContainer.appendChild(container);
+            });
+        })
+        .catch(function (error) {
+            console.error("Une erreur s'est produite lors du chargement du JSON : " + error);
+        });
+});
+            </script>
+        </div>
+    </div>
+        <script>
+            var toggle_menu = document.querySelector('.responsive-menu');
+            var menu = document.querySelector('.menu');
+            toggle_menu.onclick= function(){
+                 toggle_menu.classList.toggle('active');
+                 menu.classList.toggle('responsive')
+            }
+        </script>                    
+</body>    

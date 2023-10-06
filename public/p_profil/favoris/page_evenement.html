@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paris Explorer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="page_evenement.css">
+</head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <a href="index.html"> <span>Paris</span> Explorer</a>
+        </div>
+        <ul class="menu">
+            <ul class="menuderoulant">
+                <!--<li><a href="#">Art et Culture</a></li>-->
+                <button class="dropbtn">Art et Culture
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="sousmenu">
+                    <a href="">Art comtemporain</a>
+                    <a href="">BD</a>
+                    <a href="">Cinéma</a>
+                    <a href="">Cirque</a>
+                    <a href="">Expo</a>
+                    <a href="">Histoire</a>
+                    <a href="">Humour</a>
+                    <a href="">Littérature</a>
+                    <a href="">Musique</a>
+                    <a href="">Peinture</a>
+                    <a href="">Photo</a>
+                    <a href="">Spectacle musical</a>
+                    <a href="">Théatre</a>
+                </div>
+            </ul>
+            <ul class="menuderoulant2">            
+                <!--<li><a href="#a-propos">Divertissement et Loisirs</a></li>-->
+                <button class="dropbtn2">Divertissement et Loisirs
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="sousmenu2">
+                    <a href="">Balade</a>
+                    <a href="">Brocante</a>
+                    <a href="">Clubbing</a>
+                    <a href="">Jeux 2024</a>
+                    <a href="">Loisirs</a>
+                    <a href="">Spectacle musical</a>
+                    <a href="">Street-art</a>
+                </div>
+            </ul>
+            <ul class="menuderoulant3">        
+                <!--<li><a href="#popular-destination">Education et Connaissance</a></li>-->
+                <button class="dropbtn3">Education et Connaissance
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="sousmenu3">
+                    <a href="">Atelier</a>
+                    <a href="">Conférence</a>
+                    <a href="">Clubbing</a>
+                    <a href="">Cirque</a>
+                </div>
+            </ul>
+            <ul class="menuderoulant4">    
+                <!--<li><a href="#contact">Engagement et Bien-être</a></li>-->
+                <button class="dropbtn4">Divertissement et Loisirs
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="sousmenu4">
+                    <a href="">Enfant</a>
+                    <a href="">Gourmand</a>
+                    <a href="">LGBT</a>
+                    <a href="">Nature</a>
+                    <a href="">Santé</a>
+                    <a href="">Solidarité</a>
+                    <a href="">Sport</a>
+                </div>
+            </ul>
+        </ul>
+        <a href="Connexion.html" class="btn-reservation">Se connecter</a>
+        <div class="responsive-menu"></div>
+    </header>
+
+
+
+<div>
+    <h1>
+        coucou       
+    </h1>
+    <h1 style="opacity: 0.0;">
+        coucou       
+    </h1>
+</div> 
+<!-- section destination -->
+<div class="content">
+    <!-- box -->
+    <div style="height: 500px; width: 500px; margin: auto;" > 
+        <h1 class="title">Evenements</h1> <!-- Correction ici -->
+        <hr>
+        <p> </p>
+        <br>        
+        <div class="card mb-3" style="margin-top: 10px;">
+            <div class="card"  id="event-details">
+                <div class="card-body">
+                    <h1 class="card-title">Card title</h1>
+                    <hr>
+                    <p class="date"><i class="fas fa-calendar-alt"></i> Date</p>
+                    <p class="address"><i class="fas fa-map-marker-alt"></i> Adresse</p>
+                    <p class="price"><i class="fas fa-dollar-sign"></i> Prix</p>
+                    <hr>
+                    <p class="card-description">card description</p>
+                    <hr>
+                </div>
+            </div>
+        </div>
+                    <img class="card-img-bottom" src="/public/images/eiffel-tower-1.webp" alt="Card image cap" style="height: 500px;width: 500px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+    
+
+<script>
+   document.addEventListener("DOMContentLoaded", function () {
+    // Sélectionnez les éléments HTML que vous souhaitez mettre à jour
+    var cardTitleElement = document.querySelector(".card-title");
+    var dateElement = document.querySelector(".date");
+    var addressElement = document.querySelector(".address");
+    var priceElement = document.querySelector(".price");
+    var cardDescriptionElement = document.querySelector(".card-description");
+
+    // Obtenez l'ID de l'événement à partir de l'URL
+    var urlParams = new URLSearchParams(window.location.search);
+    var eventId = urlParams.get("id"); // Cela supposera que l'ID est passé comme paramètre "id" dans l'URL
+
+    // Chemin vers le fichier JSON
+    var jsonUrl = "chemin/vers/votre/fichier/evenements.json"; // Mettez à jour le chemin vers votre fichier JSON
+
+    // Chargement du fichier JSON
+    fetch(jsonUrl)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (evenements) {
+            // Recherchez l'événement avec l'ID correspondant
+            var evenement = evenements.find(function (event) {
+                return event.id === eventId;
+            });
+
+            // Mettez à jour le contenu des éléments HTML avec les données de l'événement
+            if (evenement) {
+                cardTitleElement.textContent = evenement.title;
+                dateElement.innerHTML = '<i class="fas fa-calendar-alt"></i> ' + evenement.date_description;
+                addressElement.innerHTML = '<i class="fas fa-map-marker-alt"></i> ' + evenement.address_zipcode;
+                priceElement.innerHTML = '<i class="fas fa-dollar-sign"></i> ' + evenement.price_detail;
+                cardDescriptionElement.textContent = evenement.description;
+            } else {
+                // Gérez le cas où aucun événement correspondant n'est trouvé
+                cardTitleElement.textContent = "Événement non trouvé";
+            }
+        })
+        .catch(function (error) {
+            console.error("Une erreur s'est produite lors du chargement du JSON : " + error);
+        });
+});
+
+</script>
+    <script>
+        var toggle_menu = document.querySelector('.responsive-menu');
+        var menu = document.querySelector('.menu');
+        toggle_menu.onclick= function(){
+             toggle_menu.classList.toggle('active');
+             menu.classList.toggle('responsive')
+        }
+    </script>
+
+
+</body>
+</html>

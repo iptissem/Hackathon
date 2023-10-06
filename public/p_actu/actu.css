@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+a {
+    text-decoration: 0;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 9px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+}
+
+body {
+    background-color: #111;
+}
+
+section {
+    margin-top: 50px;
+}
+
+header {
+    background-color: #111;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    padding: 0 5%;
+}
+
+header  .logo a {
+    font-size: 25px;
+    color: #5F97B3;
+ 
+}
+header  .logo a span {
+    color: #fff;
+}
+.menu {
+    display: flex;
+    align-items: center;
+}
+.menu li  {
+    margin: 0 15px;
+    list-style-type: none;
+}
+
+/* menu deroulant*/
+
+.menuderoulant {
+    float: left;
+    overflow: hidden;
+}
+
+.menuderoulant .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.sousmenu {
+    display: none;
+    position: absolute;
+    background-color: #111;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.sousmenu a {
+    font-size: 12px;  
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;    
+}
+
+.menuderoulant:hover .sousmenu {
+    display: block;
+}
+
+.sousmenu a:hover {
+    background-color: #5F97B3;
+}
+
+
+/* menu deroulant2*/
+
+.menuderoulant2 {
+    float: left;
+    overflow: hidden;
+}
+
+.menuderoulant2 .dropbtn2 {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.sousmenu2 {
+    display: none;
+    position: absolute;
+    background-color: #111;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.sousmenu2 a {
+    font-size: 12px; 
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  text-align: left;    
+}
+
+.menuderoulant2:hover .sousmenu2 {
+    display: block;
+}
+
+.sousmenu2 a:hover {
+    background-color: #5F97B3;
+}
+
+
+/* menu deroulant3*/
+
+.menuderoulant3 {
+    float: left;
+    overflow: hidden;
+}
+
+.menuderoulant3 .dropbtn3 {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.sousmenu3 {
+    display: none;
+    position: absolute;
+    background-color: #111;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.sousmenu3 a {
+    font-size: 12px; 
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;    
+}
+
+.menuderoulant3:hover .sousmenu3 {
+    display: block;
+}
+
+.sousmenu3 a:hover {
+    background-color: #5F97B3;
+}
+
+/* menu deroulant4*/
+
+.menuderoulant4 {
+    float: left;
+    overflow: hidden;
+}
+
+.menuderoulant4 .dropbtn4 {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.sousmenu4 {
+    display: none;
+    position: absolute;
+    background-color: #111;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.sousmenu4 a {
+    font-size: 12px; 
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;    
+}
+
+.menuderoulant4:hover .sousmenu4 {
+    display: block;
+}
+
+.sousmenu4 a:hover {
+    background-color: #5F97B3;
+}
+
+/* menu deroulant*/
+
+.menu li a {
+    color: #fff;
+    font-size: 14px;
+}
+.btn-reservation {
+    color: #5F97B3;
+    font-size: 14px;
+    border: 2px solid #5F97B3;
+    padding: 5px 20px;
+    transition: 0.5s;
+    font-weight: bolder;
+}
+.btn-reservation:hover {
+    background-color: #5F97B3;
+    color: #fff;
+ 
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    margin-top: 3%;
+    background-color: #ccc;
+    border: 10px solid #5F97B3;
+    padding: 1px;
+    margin: 50px;
+    border-radius: 10px;
+}
+
+.image {
+    flex: 1;
+    padding: 50px;
+}
+
+.text {
+    flex: 2;
+    padding: 50px;
+    font-size: 13px;
+    color: black;
+}
+
+.text a {
+    flex: 2;
+    font-size: 18px;
+    color: black;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+img {
+    max-width: 105%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.titre {
+    margin-top: 100px;
+    margin-left: 50px;
+    color: #fff;
+}
+
+#number {
+    padding: 48px;
+    background: url('https://lady-garden.co.uk/1-8-thickbox/love-heart.jpg') no-repeat center center;
+    background-size: 100px;
+    font-size: 20pt;
+    color: white; 
+    letter-spacing: 3pt;
+  }
+  
+#number:hover {
+    cursor: pointer;
+    opacity: .8;
+  }
+  
+  #number:active {
+    background-size: 123px;
+    cursor: pointer;
+  }
+
+@media (max-width:750px) {
+    header .menu {
+        display: none;
+    }
+    .btn-reservation {
+        display: none;
+    }
+    /*Home responsive*/
+    #home h2 {
+        font-size: 18px;
+        -webkit-text-stroke: 0;
+        color: #fff;
+    }
+    #home h4 {
+        font-size: 28px;
+    }
+    #home p {
+        text-align: center;
+        font-size: 10px;
+    }
+    .find_trip {
+        width: 100%;
+        height: 200px;
+    }
+    .find_trip form {
+        flex-wrap: wrap;
+    }
+    .find_trip form div {
+        margin-top: 10px;
+        flex-direction: column;
+        width: 47%;
+    }
+    .find_trip form input[type="submit"]{
+        width: 47%;
+    }
+    .home-btn {
+        display:block;
+    }
+    /*Responsive A propos*/
+    .img-desc {
+        flex-direction: column;
+        width: 100%;
+    }
+    .img-desc .left , .img-desc .right {
+        width: 100%;
+    }
+    .img-desc .left video {
+        width: 100%;
+    }
+    .img-desc .left::after {
+        background-color: transparent;
+    }
+    .img-desc .left {
+        margin-bottom: 20px;
+    }
+
+    /*Responsive menu*/
+    .responsive-menu {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
+    }
+    .responsive-menu::after {
+        position: absolute;
+        content: "";
+        height: 3px;
+        background-color: #5F97B3;
+        width: 28px;
+        box-shadow: 0 10px 0 #5F97B3;
+        transform: translateY(-10px);
+        transition: 0.5s;
+    }
+    .responsive-menu.active::after {
+        box-shadow: 0 0 0 #5F97B3; 
+        transform: rotate(45deg);
+    }
+    .responsive-menu::before {
+        position: absolute;
+        content: "";
+        height: 3px;
+        background-color: #5F97B3;
+        width: 28px;
+        transform: translateY(10px);
+        transition: 0.5s;
+    }
+    .responsive-menu.active::before {
+        transform: rotate(-45deg);
+    }
+    header .menu.responsive {
+        display: flex;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        flex-direction: column;
+        background-color: #222;
+        align-items: unset;
+        animation: animate-menu 1s forwards;
+    }
+    header .menu.responsive li {
+        margin: 20px;
+        width: 100px;
+        padding-left: 20px;
+    }
+
+    @keyframes animate-menu {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(100%);
+        }
+    }
+}

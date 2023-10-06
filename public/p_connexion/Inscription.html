@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formulaire d'Inscription</title>
+  <link rel="stylesheet" href="Inscription.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+</head>
+<body>
+  <form>
+     
+    <h1>S'inscrire</h1>
+    <div class="social-media">
+      <p><i class="fab fa-google"></i></p>
+      <p><i class="fab fa-youtube"></i></p>
+      <p><i class="fab fa-facebook-f"></i></p>
+      <p><i class="fab fa-twitter"></i></p>
+    </div>
+      <div class="registration-form">
+        <h2>Inscription</h2>
+        <form action="process_registration.php" method="POST"> 
+          <div class="inputs">
+            <input type="text" id="nom_utilisateur" placeholder="Nom" required />
+            <input type="email" id="mail_utilisateur"  placeholder="Email" required >
+            <input type="password" id="mdp_utilisateur"  placeholder="Mot de passe" required >
+            <input type="password" id="confirmation"  placeholder="Confirmation du mot de passe" required />
+
+          </div>
+            </div>
+    
+   <div class="button-inscription">
+
+      <button type="submit">Je m'inscris</button>
+
+    </div></form>
+
+  </form>
+</body>
+</html>

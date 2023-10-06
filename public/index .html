@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Paris Explorer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <a href="index.html"> <span>Paris</span> Explorer</a>
+        </div>
+       
+
+        <ul class="menu">
+            <ul class="menuderoulant">
+                <!--<li><a href="#">Art et Culture</a></li>-->
+                <button class="dropbtn">Art et Culture
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="sousmenu">
+                    <a href="">Art comtemporain</a>
+                    <a href="">BD</a>
+                    <a href="">Cinéma</a>
+                    <a href="">Cirque</a>
+                    <a href="">Expo</a>
+                    <a href="">Histoire</a>
+                    <a href="">Humour</a>
+                    <a href="">Littérature</a>
+                    <a href="">Musique</a>
+                    <a href="">Peinture</a>
+                    <a href="">Photo</a>
+                    <a href="">Spectacle musical</a>
+                    <a href="">Théatre</a>
+                </div>
+            </ul>
+            <ul class="menuderoulant2">            
+                <!--<li><a href="#a-propos">Divertissement et Loisirs</a></li>-->
+                <button class="dropbtn2">Divertissement et Loisirs
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="sousmenu2">
+                    <a href="">Balade</a>
+                    <a href="">Brocante</a>
+                    <a href="">Clubbing</a>
+                    <a href="">Jeux 2024</a>
+                    <a href="">Loisirs</a>
+                    <a href="">Spectacle musical</a>
+                    <a href="">Street-art</a>
+                </div>
+            </ul>
+            <ul class="menuderoulant3">        
+                <!--<li><a href="#popular-destination">Education et Connaissance</a></li>-->
+                <button class="dropbtn3">Education et Connaissance
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="sousmenu3">
+                    <a href="">Atelier</a>
+                    <a href="">Conférence</a>
+                    <a href="">Clubbing</a>
+                    <a href="">Cirque</a>
+                </div>
+            </ul>
+            <ul class="menuderoulant4">    
+                <!--<li><a href="#contact">Engagement et Bien-être</a></li>-->
+                <button class="dropbtn4">Divertissement et Loisirs
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="sousmenu4">
+                    <a href="">Enfant</a>
+                    <a href="">Gourmand</a>
+                    <a href="">LGBT</a>
+                    <a href="">Nature</a>
+                    <a href="">Santé</a>
+                    <a href="">Solidarité</a>
+                    <a href="">Sport</a>
+                </div>
+            </ul>
+        </ul>
+        <a href="p_connexion/Connexion.html" class="btn-reservation">Se connecter</a>
+        <a href="p_profil/profil/page_profil.html" class="btn-reservation"><i class="fas fa-user"></i></a>
+
+        <div class="responsive-menu"></div>
+    </header>
+    <!-- acceuil section -->
+    <section id="home">
+        <h2>Paris en Éveil</h2>
+        <h4>Cultivez, Créez, Éduquez, Épanouissez-vous !</h4>
+        <!--<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit accusantium consectetur in voluptates neque.</p>
+        <p>molestiae illum eaque praesentium esse. Quos iusto.</p>-->
+        <a href="p_actu/actu.html" class="btn-reservation home-btn">Fil d'actualité !</a>
+        <div class="find_trip">
+            <form id="filter-form">
+                <div>
+                    <label>Mot-clé</label>
+                    <input type="text" id="mot-cle" placeholder="Entrez un mot-clé">
+                </div>
+                <div>
+                    <label for="categorie">Catégorie</label>
+                    <input type="text" id="categorie" placeholder="Entrez une Catégorie">
+                </div>
+                <input type="submit" value="Voir">
+            </form>
+        </div>
+    </section>
+
+    <!-- section destination -->
+    <section id="popular-destination">
+        <h1 class="title">Toutes nos destinations</h1>
+        <div class="content">
+            <!-- box -->
+            <div>              
+                <div id="destination-container" class="content">                   
+                         <!-- Les éléments de destination seront générés ici -->                
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--  contact section -->
+    <section id="contact">
+        <h1 class="title">Contact</h1>
+        <form action="">
+            <div class="left-right">
+                <div class="left">
+                    <label>Nom Complet</label>
+                    <input type="text">
+                    <label>Objet</label>
+                    <input type="text">
+                    <label>Email</label>
+                    <input type="text">
+                    <label>Message</label>
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                </div>
+                <div class="right">
+                    <label>Numéro</label>
+                    <input type="text">
+                    <label>Date</label>
+                    <input type="text">
+                    <label>Autres Details</label>
+                    <input type="text">
+                    <label>Adresse</label>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9916256937595!2d2.292292615509614!3d48.85837007928746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sTour%20Eiffel!5e0!3m2!1sfr!2sfr!4v1647531560805!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            <button>Envoyer</button>
+        </form>
+    </section>
+
+    <footer>
+        <p> © 2023 <span>Paris Explorer</span> | Tous les droits sont réservés.</p>
+    </footer>
+    <script src="main.js"></script>
+
+    <script>
+        var toggle_menu = document.querySelector('.responsive-menu');
+        var menu = document.querySelector('.menu');
+        toggle_menu.onclick= function(){
+             toggle_menu.classList.toggle('active');
+             menu.classList.toggle('responsive')
+        }
+    </script>
+
+
+</body>
+</html>
